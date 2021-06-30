@@ -267,17 +267,17 @@ return [
         [
             'text' => 'Servicios',
             'url'  => 'servicios',
-            'icon' => 'fas fa-fw fa-tags',
+            'icon' => 'fa fa-bars',
         ],
         [
             'text' => 'Clientes',
             'url'  => 'clientes',
-            'icon' => 'fas fa-fw fa-tags',
+            'icon' => 'fas fa-fw fa-user',
         ],
         [
             'text' => 'Facturación',
             'url'  => 'facturacion',
-            'icon' => 'fas fa-fw fa-tags',
+            'icon' => 'fa fa-calculator',
         ],
         [
             'text'    => 'Contabilidad',
@@ -301,7 +301,7 @@ return [
         [
             'text' => 'Registro Resultados',
             'url'  => '',
-            'icon' => 'fas fa-fw fa-tags',
+            'icon' => 'fa fa-file',
         ],
       
         ['header' => 'account_settings'],
