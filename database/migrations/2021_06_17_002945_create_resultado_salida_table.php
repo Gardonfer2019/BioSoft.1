@@ -13,7 +13,7 @@ class CreateResultadoSalidaTable extends Migration
      */
     public function up()
     {
-        Schema::create('resultado_salida', function (Blueprint $table) {
+        Schema::create('salida', function (Blueprint $table) {
             $table->id('id_salida');
             $table->integer('numero_lote');
             $table->integer('id_insumo');
@@ -31,6 +31,6 @@ class CreateResultadoSalidaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('resultado_salida');
+        Schema::dropIfExists('salida');
     }
 }

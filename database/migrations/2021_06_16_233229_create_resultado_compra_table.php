@@ -13,7 +13,7 @@ class CreateResultadoCompraTable extends Migration
      */
     public function up()
     {
-        Schema::create('resultado_compra', function (Blueprint $table) {
+        Schema::create('compra', function (Blueprint $table) {
             $table->id('id_compra');
             $table->integer('numero_lote');
             $table->integer('id_insumo');
@@ -33,6 +33,6 @@ class CreateResultadoCompraTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('resultado_compra');
+        Schema::dropIfExists('compra');
     }
 }
