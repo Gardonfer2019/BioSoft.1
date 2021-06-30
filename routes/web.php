@@ -20,3 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Modulo Servicios-Examen
+Route::GET('/servicios', 'ServiciosController@index')->name('servicios');
+Route::GET('/ramas', 'ServiciosController@listarRamas')->name('listarRamas');
+Route::POST('/agregar', 'ServiciosController@guardarServicios')->name('guardarServicios');
