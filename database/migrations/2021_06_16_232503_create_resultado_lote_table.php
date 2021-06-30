@@ -13,7 +13,7 @@ class CreateResultadoLoteTable extends Migration
      */
     public function up()
     {
-        Schema::create('resultado_lote', function (Blueprint $table) {
+        Schema::create('lote', function (Blueprint $table) {
             $table->id('id_lote');
             $table->integer('numero_lote');
             $table->boolean('borrado');
@@ -28,6 +28,6 @@ class CreateResultadoLoteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('resultado_lote');
+        Schema::dropIfExists('lote');
     }
 }
