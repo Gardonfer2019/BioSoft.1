@@ -25,3 +25,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::GET('/servicios', 'ServiciosController@index')->name('servicios');
 Route::GET('/ramas', 'ServiciosController@listarRamas')->name('listarRamas');
 Route::POST('/agregar', 'ServiciosController@guardarServicios')->name('guardarServicios');
+Route::GET('/getServicesData','ServiciosController@getServicesData');

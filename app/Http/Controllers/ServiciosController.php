@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Yajra\DataTables\DataTables;
 
 class ServiciosController extends Controller
 {
@@ -30,12 +31,19 @@ class ServiciosController extends Controller
         $borrado=$request->borrado;
 
         //Guardar Datos BD
-        $insert=DB::insert("INSERT INTO examen(id_rama, nombre_examen, prefijo, precio, descripcion, borrado) 
-                            VALUES (:id_rama, :nombre_examen, :prefijo, :precio, :descripcion, :borrado)", 
+        $insert=DB::insert("INSERT INTO examen(id_rama, nombre_examen, prefijo, precio, descripcion, borrado, created_at) 
+                            VALUES (:id_rama, :nombre_examen, :prefijo, :precio, :descripcion, :borrado, now())", 
                                     ["id_rama"=>$id_rama, "nombre_examen"=>$nombre_servicio, "prefijo"=>$prefijo_servicio, "precio"=>$precio_servicio, "descripcion"=>$nombre_servicio, "borrado"=>$borrado]);
 
         // return $request->all();
         Session()->flash('examen','El examen ha sido guardado correctamente');
         return redirect()->route('servicios');
+    }
+
+    public function getServicesData(){
+        $services=DB::SELECT('SELECT e.id_examen,re.descripcion as seccion, e.prefijo, e.nombre_examen, e.precio, e.created_at  FROM examen e
+                                    LEFT JOIN rama_examen re ON e.id_rama=re.id_rama ');
+
+        return DataTables::of($services)->make();
     }
 }

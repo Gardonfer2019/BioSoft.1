@@ -18,6 +18,8 @@
     <p>Bienvenido.</p>
 
     @include('servicios.formulario')
+    @include('servicios.dataTable')
+    
 @stop
 
 @section('css')
@@ -25,7 +27,57 @@
 @stop
 
 @section('js')
+
+
     <script>
-        console.log('Hi!');
+        $(document).ready(function() {
+            console.log('Hola!');
+            $('#services-table').DataTable({
+                processing: false,
+                serverSide: false,
+                responsive: true,
+               
+                
+                ajax: '{{ url('/getServicesData') }}',
+                columns: [{
+                        data: 'id_examen'
+                        
+                    },  
+                    {
+                        data: 'seccion'
+                    },
+                    {
+                        data: 'prefijo'
+                    },
+                    {
+                        data: 'nombre_examen'
+                    },
+                    {
+                        data: 'precio'
+                    },
+                    {
+                        data: 'created_at'
+                    }
+
+                ],
+                language: {
+                    "lengthMenu": "Mostrar _MENU_ registros",
+                    "zeroRecords": "Nada encontrado",
+                    "info": "_PAGE_ de _PAGES_",
+                    "infoEmpty": "No records available",
+                    "infoFiltered": "(filtrando de _MAX_ registros totales)",
+                    "search":"Buscar:",
+                    "paginate": {
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    }
+                },
+                 
+                
+
+            });
+
+
+        });
     </script>
 @stop
