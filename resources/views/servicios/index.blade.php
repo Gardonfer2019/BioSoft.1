@@ -57,6 +57,9 @@
                     },
                     {
                         data: 'created_at'
+                    },
+                    {
+                        data: 'action'
                     }
 
                 ],
@@ -72,7 +75,7 @@
                         "previous": "Anterior"
                     }
                 },
-                 
+                
                 
 
             });

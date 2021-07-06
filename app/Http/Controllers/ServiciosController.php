@@ -44,6 +44,21 @@ class ServiciosController extends Controller
         $services=DB::SELECT('SELECT e.id_examen,re.descripcion as seccion, e.prefijo, e.nombre_examen, e.precio, e.created_at  FROM examen e
                                     LEFT JOIN rama_examen re ON e.id_rama=re.id_rama ');
 
-        return DataTables::of($services)->make();
+        return DataTables::of($services)
+       
+        ->addColumn('action', 'servicios.action')
+        ->rawColumns(['action'])
+        ->make();
+    }
+
+    public function show(Request $request){
+        $id_examen=$request->id_examen;
+
+        $infoExamen=DB::Select('SELECT e.id_examen,re.descripcion as seccion, e.prefijo, e.nombre_examen, e.precio, e.created_at  FROM examen e
+                    LEFT JOIN rama_examen re ON e.id_rama=re.id_rama
+                    WHERE e.id_examen=:id_examen', ['id_examen'=>$id_examen]);
+        
+        //return response()->json($infoExamen,200);
+        return view('servicios.show', ['nombre_examen'=>$infoExamen[0]->nombre_examen]); 
     }
 }

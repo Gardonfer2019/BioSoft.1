@@ -23,6 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Modulo Servicios-Examen
 Route::GET('/servicios', 'ServiciosController@index')->name('servicios');
+Route::GET('/servicios/{id_examen}', 'ServiciosController@show')->name('servicios.show');
 Route::GET('/ramas', 'ServiciosController@listarRamas')->name('listarRamas');
 Route::POST('/agregar', 'ServiciosController@guardarServicios')->name('guardarServicios');
 Route::GET('/getServicesData','ServiciosController@getServicesData');
