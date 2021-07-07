@@ -15,6 +15,16 @@
             </button>
         </div>
     @endif
+    
+    
+    @if ($eliminar = Session::get('eliminar'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Excelente!</strong> {{ $eliminar }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+@endif
     <p>Bienvenido.</p>
 
     @include('servicios.formulario')

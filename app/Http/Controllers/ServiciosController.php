@@ -61,4 +61,15 @@ class ServiciosController extends Controller
         //return response()->json($infoExamen,200);
         return view('servicios.show', ['nombre_examen'=>$infoExamen[0]->nombre_examen]); 
     }
+
+    public function eliminarServicios(Request $request){
+
+        $id_examen=$request->id_examen;
+        
+        $delete=DB::DELETE('DELETE FROM examen WHERE id_examen=:id_examen', ['id_examen'=>$id_examen]);
+        
+        Session()->flash('eliminar', 'El examen ha sido eliminado correctamente');
+        return redirect()->route('servicios');
+
+    }
 }
