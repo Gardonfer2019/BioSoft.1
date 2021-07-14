@@ -16,16 +16,24 @@
         </div>
     @endif
     
-    
-    @if ($eliminar = Session::get('eliminar'))
+   @if ($eliminar = Session::get('eliminar'))
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <strong>Excelente!</strong> {{ $eliminar }}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-@endif
-    <p>Bienvenido.</p>
+    @endif
+
+    @if ($actualizar = Session::get('actualizar'))
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Excelente!</strong> {{ $actualizar }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @endif
+   
 
     @include('servicios.formulario')
     @include('servicios.dataTable')
@@ -85,7 +93,10 @@
                         "previous": "Anterior"
                     }
                 },
-                
+                "scrollX": true,
+                scrollY:        200,
+                deferRender:    false,
+                scroller:       true
                 
 
             });

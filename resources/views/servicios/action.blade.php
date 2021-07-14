@@ -10,6 +10,6 @@
 
     <button type="submit" name="submit"  class="btn btn-danger btn-sm "
         onclick="return confirm('¿Estas Seguro?')">
-        <i class="icon ion-md-trash"></i>
+        <i class="icon ion-md-trash" aria-hidden="true"></i>
     </button>
 </form>
