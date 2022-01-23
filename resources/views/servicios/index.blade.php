@@ -93,10 +93,7 @@
                         "previous": "Anterior"
                     }
                 },
-                "scrollX": true,
-                scrollY:        200,
-                deferRender:    false,
-                scroller:       true
+                
                 
 
             });

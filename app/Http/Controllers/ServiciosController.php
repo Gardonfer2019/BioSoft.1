@@ -15,14 +15,14 @@ class ServiciosController extends Controller
 
         return view('servicios.index')->with('listarRamas', $listarRamas);
     }
-
+    /*
     public function listarRamas()
     {
         $listarRamas = DB::Select('Select id_rama, descripcion from rama_examen');
 
         //return response()->json($listarRamas,200); 
         return view('servicios.formulario')->with('listarRamas', $listarRamas);
-    }
+    }*/
 
     public function guardarServicios(Request $request)
     {
@@ -31,7 +31,7 @@ class ServiciosController extends Controller
         $nombre_servicio = $request->nombre_servicio;
         $prefijo_servicio = $request->prefijo_servicio;
         $precio_servicio = $request->precio_servicio;
-        $descripcion = $request->descripcion;
+        $descripcion = $request->textDescripcion;
         $borrado = $request->borrado;
 
         //Guardar Datos BD

@@ -29,5 +29,15 @@ Route::PUT('servicios/edit/{id_examen}', 'ServiciosController@edit')->name('serv
 Route::POST('servicios/agregar', 'ServiciosController@guardarServicios')->name('guardarServicios');
 Route::delete('servicios/delete/{id_examen}','ServiciosController@eliminarServicios')->name('servicios.eliminar');
 
-Route::GET('/ramas', 'ServiciosController@listarRamas')->name('listarRamas');
+//Route::GET('/ramas', 'ServiciosController@listarRamas')->name('listarRamas');
 Route::GET('/getServicesData','ServiciosController@getServicesData');
+
+
+//Modulo Médico
+Route::GET('/medicos', 'MedicoController@index')->name('medico.index');
+Route::POST('/medicos/store', 'MedicoController@store')->name('medico.store');
+Route::GET('/medicos/{id_medico}', 'MedicoController@show')->name('medico.show');
+Route::GET('/medicos/edit/{id_medico}', 'MedicoController@edit')->name('medico.edit');
+Route::PUT('/medicos/edit/{id_medico}', 'MedicoController@update')->name('medico.update');
+Route::DELETE('/medicos/delete/{id_medico}', 'MedicoController@delete')->name('medico.delete');
+

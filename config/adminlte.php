@@ -275,9 +275,9 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'Facturación',
-            'url'  => 'facturacion',
-            'icon' => 'fa fa-calculator',
+            'text' => 'Médico',
+            'url'  => 'medicos',
+            'icon' => 'fa fa-user-md',
         ],
         [
             'text'    => 'Contabilidad',
@@ -301,7 +301,7 @@ return [
         [
             'text' => 'Registro Resultados',
             'url'  => '',
-            'icon' => 'fa fa-file',
+            'icon' => 'icon ion-md-clipboard',
         ],
       
         ['header' => 'account_settings'],
